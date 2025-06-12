@@ -1,4 +1,5 @@
 import './MovieCard.css'
+import Modal from './Modal.jsx'
 
 
 
@@ -11,7 +12,7 @@ function MovieCard(props){
        <div className='movie-card'>
            <img src={posterUrl} alt={props.movie.title}/>
            <p>{props.movie.title}</p>
-           <p>⭐ {props.movie.vote_average}</p>
+           <p>⭐{props.movie.vote_average}</p>
            <p>{props.movie.release_date.substring(0,4)}</p>
        </div>
    );

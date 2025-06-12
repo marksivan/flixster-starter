@@ -2,9 +2,16 @@ import './App.css'
 import Search from './Search.jsx'
 import Sort from './Sort.jsx'
 import MovieList from './MovieList.jsx'
+import {useState} from 'react'
 
 
 function App() {
+  const [page, setPage] = useState(1)
+
+  function increasePageNumber() {
+    setPage(page + 1)
+  }
+
  return (
    <div className="App">
 
@@ -27,7 +34,8 @@ function App() {
          <MovieList/>
        </div>
        <div className='load-more'>
-         <button>Load More</button>
+         <button onClick={increasePageNumber}>Load More</button>
+         <p>Page {page}</p>
 
 
        </div>
