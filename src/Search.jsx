@@ -27,7 +27,7 @@ function Search({ onSearch }) {
               onChange={(e) => setSearchTerm(e.target.value)}
               />
 
-              {searchTerm && (
+              {searchTerm && ( 
                 <button
                   className="clear-search"
                   type="button"
