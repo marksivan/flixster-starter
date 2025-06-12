@@ -8,20 +8,25 @@ import {useState} from 'react'
 function App() {
   const [page, setPage] = useState(1)
 
+  const [searchTerm, setSearchTerm] = useState('')
+
   function increasePageNumber() {
     setPage(page + 1)
   }
 
+  function handleSearch(term) {
+    setPage(1)
+    setSearchTerm(term)
+  }
+
  return (
-   <div className="App">
-
-
+   <div className="App">                           
      <header className="App-header">
        <h1 className='title'>🎥 Flixster</h1>
 
 
      <div className='controls-row'>
-       <Search/>
+       <Search onSearch = {handleSearch}/>
        <Sort/>
      </div>
 
@@ -31,7 +36,7 @@ function App() {
 
      <main>
        <div className='movie-container'>
-         <MovieList/>
+         <MovieList page = {page} searchTerm={searchTerm}/>
        </div>
        <div className='load-more'>
          <button onClick={increasePageNumber}>Load More</button>
@@ -57,5 +62,4 @@ function App() {
  )
 }
 
-
-export default App
+export default App;

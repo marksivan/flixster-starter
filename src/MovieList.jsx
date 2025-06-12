@@ -6,7 +6,7 @@ import {useState, useEffect} from 'react'
 
 
 
-function MovieList({pages = 1, searchTerm = ''}){
+function MovieList({page = 1, searchTerm = ''}){
     // state to stores the movies fetched from the API
     const [movies, setMovies] = useState([])
 
@@ -26,8 +26,33 @@ function MovieList({pages = 1, searchTerm = ''}){
 
                 const response = await fetch(apiURL);
 
-                if (!repose.ok)
+                if (!response.ok){
+                    throw new Error('Failed to fetch movies');
+            }
+            const data = await response.json();
 
+            if (page === 1){
+                setMovies(data.results);
+            }else{
+                setMovies(prevMovies => [...prevMovies, ...data.results]);
+            }
+
+            setIsLoading(false);
+        } catch (err) {
+            setError(err.message);
+            setIsLoading(false);
+        }
+       };
+       fetchMovies();
+    }, [page, searchTerm]); // re-reun when page or searchTerm changes
+
+    if (isLoading && page === 1){
+        return <div className='loading'>Loading...</div>;
+    }
+
+    if (error){
+        return <div className='error'>An error occurred: {error}</div>;
+    }
 
    return (
        <div className='movie-list'>
