@@ -1,8 +1,7 @@
 import './Sort.css'
 import { useState, useEffect } from 'react'
 
-function Sort({ onSortChange, onFilterChange }) {
-   const [genres, setGenres] = useState([]);
+function Sort({ onSortChange}) {
    const [loading, setLoading] = useState(true);
 
    // Fetch genres when component mounts
@@ -35,15 +34,7 @@ function Sort({ onSortChange, onFilterChange }) {
       onSortChange(e.target.value);
    };
 
-   // Handle genre filter change
-   const handleGenreChange = (e) => {
-      onFilterChange({ type: 'genre', value: e.target.value });
-   };
 
-   // Handle year filter change
-   const handleYearChange = (e) => {
-      onFilterChange({ type: 'year', value: e.target.value });
-   };
 
    // Generate year options (current year down to 1990)
    const currentYear = new Date().getFullYear();
@@ -64,31 +55,6 @@ function Sort({ onSortChange, onFilterChange }) {
                   <option value="release_date">Release Date (Newest)</option>
                   <option value="title">Title (A-Z)</option>
                </select>
-            </form>
-         </div>
-
-         {/* Filter Options */}
-         <div className='filter-menu'>
-            <form>
-               {/* <label htmlFor="filter-genre">Filter by Genre</label>
-               <select id="filter-genre" onChange={handleGenreChange}>
-                  <option value="">All Genres</option>
-                  {!loading && genres.map(genre => (
-                     <option key={genre.id} value={genre.id}>
-                        {genre.name}
-                     </option>
-                  ))}
-               </select> */}
-
-               {/* <label htmlFor="filter-year">Filter by Year</label>
-               <select id="filter-year" onChange={handleYearChange}>
-                  <option value="">All Years</option>
-                  {years.map(year => (
-                     <option key={year} value={year}>
-                        {year}
-                     </option>
-                  ))}
-               </select> */}
             </form>
          </div>
       </div>
