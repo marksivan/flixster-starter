@@ -15,6 +15,12 @@ function Search({ onSearch }) {
     setSearchTerm("");
     onSearch("");
   };
+
+  const handleNowPlaying = (event) => {
+    event.preventDefault(); 
+    setSearchTerm("");
+    onSearch(""); // Reset search results to default (popular movies)
+  };
   return (
     <div className="search-section">
       <form onSubmit={handleSubmit}>
@@ -27,7 +33,7 @@ function Search({ onSearch }) {
               onChange={(e) => setSearchTerm(e.target.value)}
               />
 
-              {searchTerm && ( 
+              {searchTerm && (
                 <button
                   className="clear-search"
                   type="button"
@@ -37,12 +43,17 @@ function Search({ onSearch }) {
                   <span className="close">&times;</span>
                 </button>
               )}
-
-
           </div>
 
           <button type="submit" className="search-button">
             <span style={{ fontSize: "20px" }}>&#128269;</span>
+          </button>
+          <button
+            type="button"
+            className="now-playing-button"
+            onClick={handleNowPlaying}
+          >
+            Now Playing
           </button>
         </div>
       </form>

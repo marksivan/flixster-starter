@@ -9,15 +9,7 @@ function Sort() {
                    <option value="rating">Rating</option>
                    <option value="date-release">Date Released</option>
 
-
-
-
-
-
                    </select>
-
-
-
 
                </form>
            </div>
