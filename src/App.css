@@ -13,6 +13,10 @@
 
  }
 
+ h1{
+  text-shadow: 2px 2px #e51a1a;
+ }
+
 
  @media (max-width: 600px) {
   .movie-card {
@@ -107,6 +111,9 @@
   margin-top: 30px;
  }
 
+ .page-number{
+  color: white
+ }
  .load-more{
 
   /* background: linear-gradient(to right, blue, black); */

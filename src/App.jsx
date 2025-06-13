@@ -38,6 +38,7 @@ function App() {
    <div className="App">
      <header className="App-header">
        <h1 className='title'>🎥 Flixster</h1>
+      
 
        <div className='controls-row'>
          <Search onSearch={handleSearch}/>
@@ -59,7 +60,7 @@ function App() {
        </div>
        <div className='load-more'>
          <button onClick={increasePageNumber}>Load More</button>
-         <p>Page {page}</p>
+         <p className='page-number'> Page {page}</p>
        </div>
      </main>
 

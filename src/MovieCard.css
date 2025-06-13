@@ -1,12 +1,13 @@
 .card-content{
     display: block;
     border: 2px solid gold;
-    height: 500px;
+    height: 550px;
     width: 280px;
     text-align: center;
     border-radius: 20px;
     box-shadow: 0 0 8px 2px gold;
     background-color: rgb(79, 11, 143);
+    text-wrap: wrap;
 
  }
 
@@ -31,10 +32,63 @@
     font-size: 13px;
     color: white;
 
+
  }
 
  .movie-card h5{
    font-size: 16px;
    color: gold;
+   font-family: 'Times New Roman', Times, serif;
+
 
 }
+
+.card-actions {
+   display: flex;
+   justify-content: space-around;
+   margin-top: 10px;
+   padding: 0 20px;
+ }
+
+ .favorite-btn, .watched-btn {
+   background: none;
+   border: none;
+   font-size: 24px;
+   cursor: pointer;
+   transition: color 0.2s;
+
+   padding: 0;
+   margin: 0;
+   width: auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   outline: none;
+   -webkit-tap-highlight-color: transparent;
+ }
+
+ /* Remove hover/focus effects */
+ .favorite-btn:hover, .watched-btn:hover,
+ .favorite-btn:focus, .watched-btn:focus,
+ .favorite-btn:active, .watched-btn:active {
+   background: none;
+   outline: none;
+   box-shadow: none;
+ }
+
+ .favorite-btn:hover {
+   color: #ccc;
+   transform: scale(1.2);
+
+ }
+
+ .favorite-btn.active {
+   color: red;
+ }
+
+
+ .watched-btn:hover {
+   color: #ccc;
+   transform: scale(1.2);
+
+ }
