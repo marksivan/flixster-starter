@@ -1,29 +1,98 @@
 import './Sort.css'
-function Sort() {
+import { useState, useEffect } from 'react'
+
+function Sort({ onSortChange, onFilterChange }) {
+   const [genres, setGenres] = useState([]);
+   const [loading, setLoading] = useState(true);
+
+   // Fetch genres when component mounts
+   useEffect(() => {
+      const fetchGenres = async () => {
+         try {
+            const apiKey = import.meta.env.VITE_API_KEY;
+            const response = await fetch(
+               `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=en-US`
+            );
+
+            if (!response.ok) {
+               throw new Error('Failed to fetch genres');
+            }
+
+            const data = await response.json();
+            setGenres(data.genres);
+            setLoading(false);
+         } catch (error) {
+            console.error('Error fetching genres:', error);
+            setLoading(false);
+         }
+      };
+
+      fetchGenres();
+   }, []);
+
+   // Handle sort change
+   const handleSortChange = (e) => {
+      onSortChange(e.target.value);
+   };
+
+   // Handle genre filter change
+   const handleGenreChange = (e) => {
+      onFilterChange({ type: 'genre', value: e.target.value });
+   };
+
+   // Handle year filter change
+   const handleYearChange = (e) => {
+      onFilterChange({ type: 'year', value: e.target.value });
+   };
+
+   // Generate year options (current year down to 1990)
+   const currentYear = new Date().getFullYear();
+   const years = [];
+   for (let year = currentYear; year >= 1990; year--) {
+      years.push(year);
+   }
+
    return (
-       <div className="sort-section">
-           <div className='sort-menu'>
-               <form action="">
-                   <label htmlFor="sort-movies">Sort By</label>
-                   <select name="" id="">
-                   <option value="rating">Rating</option>
-                   <option value="date-release">Date Released</option>
+      <div className="sort-section">
+         {/* Sort Options */}
+         <div className='sort-menu'>
+            <form>
+               <label htmlFor="sort-movies">Sort By</label>
+               <select id="sort-movies" onChange={handleSortChange}>
+                  <option value="">Select...</option>
+                  <option value="vote_average">Rating (High to Low)</option>
+                  <option value="release_date">Release Date (Newest)</option>
+                  <option value="title">Title (A-Z)</option>
+               </select>
+            </form>
+         </div>
 
-                   </select>
+         {/* Filter Options */}
+         <div className='filter-menu'>
+            <form>
+               {/* <label htmlFor="filter-genre">Filter by Genre</label>
+               <select id="filter-genre" onChange={handleGenreChange}>
+                  <option value="">All Genres</option>
+                  {!loading && genres.map(genre => (
+                     <option key={genre.id} value={genre.id}>
+                        {genre.name}
+                     </option>
+                  ))}
+               </select> */}
 
-               </form>
-           </div>
-
-
-
-
-       </div>
+               {/* <label htmlFor="filter-year">Filter by Year</label>
+               <select id="filter-year" onChange={handleYearChange}>
+                  <option value="">All Years</option>
+                  {years.map(year => (
+                     <option key={year} value={year}>
+                        {year}
+                     </option>
+                  ))}
+               </select> */}
+            </form>
+         </div>
+      </div>
    )
-
-
-
-
 }
-
 
 export default Sort;

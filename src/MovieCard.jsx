@@ -21,9 +21,9 @@ function MovieCard(props){
        <div className='movie-card'>
            <div className='card-content' onClick={openModal}>
                 <img src={posterUrl} alt={props.movie.title}/>
-                <p>{props.movie.title}</p>
-                <p>⭐{props.movie.vote_average}</p>
-                <p>{props.movie.release_date.substring(0,4)}</p>
+                <h5>{props.movie.title}</h5>
+                <p>⭐ {props.movie.vote_average}</p>
+                 <p>{props.movie.release_date.substring(0,4)}</p> 
            </div>
 
        {showModal &&(

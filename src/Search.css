@@ -25,7 +25,13 @@
     width: 55px;
     margin-left: 1vw;
     border-radius: 50%;
-    height: 40px
+    height: 40px;
+    background-color: blue;
+
+ }
+
+ .search-button:hover{
+    background-color: rgb(45, 45, 244);
  }
 
 
@@ -57,6 +63,7 @@
    display: flex;
    align-items: center;
    width: 100%;
+   margin-right: 30px;
  }
 
  .search-bar {
@@ -68,7 +75,7 @@
  }
 
  .now-playing-button {
-   background-color: #0d253f;
+   background-color: rgb(10, 68, 10) ;
 
    color: white;
    border: none;
