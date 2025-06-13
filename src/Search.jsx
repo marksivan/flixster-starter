@@ -1,8 +1,6 @@
 import "./Search.css";
 import React, { useState } from "react";
 
-
-
 function Search({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -17,7 +15,7 @@ function Search({ onSearch }) {
   };
 
   const handleNowPlaying = (event) => {
-    event.preventDefault(); 
+    event.preventDefault();
     setSearchTerm("");
     onSearch(""); // Reset search results to default (popular movies)
   };
@@ -31,18 +29,18 @@ function Search({ onSearch }) {
               placeholder="Search for a movie..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              />
+            />
 
-              {searchTerm && (
-                <button
-                  className="clear-search"
-                  type="button"
-                  onClick={handleClear}
-                  aria-label="Clear Search"
-                >
-                  <span className="close">&times;</span>
-                </button>
-              )}
+            {searchTerm && (
+              <button
+                className="clear-search"
+                type="button"
+                onClick={handleClear}
+                aria-label="Clear Search"
+              >
+                <span className="close">&times;</span>
+              </button>
+            )}
           </div>
 
           <button type="submit" className="search-button">

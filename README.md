@@ -68,7 +68,6 @@ Deployed Application (**required**): [Flixster Deployed Site](ADD_LINK_HERE)
 
 #### STRETCH FEATURES
 
-
 - [x] **Embedded Movie Trailers**
   - [x] Within the pop-up modal displaying a movie's details, the movie trailer is viewable.
     - [x] When the trailer is clicked, users can play the movie trailer.
@@ -79,7 +78,7 @@ Deployed Application (**required**): [Flixster Deployed Site](ADD_LINK_HERE)
     - [ ] Clicking on the visual element should mark the movie as favorited
     - [ ] There should be visual feedback (such as the heart turning a different color) to show that the movie has been favorited by the user.
   - [ ] If the movie is already favorited:
-    - [ ] Clicking on the visual element should mark the movie as *not* favorited.
+    - [ ] Clicking on the visual element should mark the movie as _not_ favorited.
     - [ ] There should be visual feedback (such as the heart turning a different color) to show that the movie has been unfavorited.
 - [ ] **Watched Checkbox**
   - [ ] For each movie displayed, users can mark the movie as watched.
@@ -88,7 +87,7 @@ Deployed Application (**required**): [Flixster Deployed Site](ADD_LINK_HERE)
     - [ ] Clicking on the visual element should mark the movie as watched
     - [ ] There should be visual feedback (such as the eye turning a different color) to show that the movie has been watched by the user.
   - [ ] If the movie is already watched:
-    - [ ] Clicking on the visual element should mark the movie as *not* watched.
+    - [ ] Clicking on the visual element should mark the movie as _not_ watched.
     - [ ] There should be visual feedback (such as the eye turning a different color) to show that the movie has not been watched.
 - [ ] **Sidebar**
   - [ ] The website includes a side navigation bar.
@@ -108,15 +107,15 @@ Deployed Application (**required**): [Flixster Deployed Site](ADD_LINK_HERE)
 
 ### Reflection
 
-* Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
+- Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
 Add your response here
 
-* If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
+- If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
 
 Add your response here
 
-* Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+- Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
 Add your response here
 

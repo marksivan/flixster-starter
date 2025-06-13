@@ -1,0 +1,71 @@
+.my-lists-page {
+  width: 100%;
+  padding: 20px;
+  color: white;
+}
+
+.lists-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.lists-header h1 {
+  margin: 0 auto;
+}
+
+.back-button {
+  background-color: #1c1c76;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  width: auto;
+}
+
+.back-button:hover {
+  background-color: #2a2a9e;
+}
+
+.lists-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.list-section {
+  width: 100%;
+}
+
+.list-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 10px;
+}
+
+.movies-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.empty-message {
+  color: #aaa;
+  font-style: italic;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .movies-grid {
+    justify-content: center;
+  }
+}

@@ -1,31 +1,49 @@
 .App {
   text-align: center;
-  min-width: 700px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
- }
+.my-lists-button {
+  background-color: #e51a1a;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  width: auto;
+}
 
+.my-lists-button:hover {
+  background-color: #ff3333;
+}
 
- .App-header {
+.App-header {
   background: linear-gradient(to right, blue, black);
   padding: 20px;
   padding-bottom: 50px;
+}
 
- }
-
- h1{
+h1 {
   text-shadow: 2px 2px #e51a1a;
- }
+}
 
-
- @media (max-width: 600px) {
+@media (max-width: 600px) {
   .movie-card {
     width: 100%;
   }
-
-
- }
- /* .search-bar {
+}
+/* .search-bar {
   display: inline;
   width: 30%;
 
@@ -34,15 +52,11 @@
 
  } */
 
-
-
-
- /* .search-bar form {
+/* .search-bar form {
   flex-direction: column;
  } */
 
-
- /* input{
+/* input{
   width: 70%;
 
 
@@ -50,72 +64,89 @@
 
  } */
 
-
- button{
+button {
   width: 30%;
- }
+}
 
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
 
- .movie-container{
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.movie-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 10px;
-  height: 100%;
+  flex: 1;
   /* background: linear-gradient(to right, blue, black); */
+}
 
- }
-
-
- .App-footer{
+.App-footer {
   justify-content: center;
   display: flex;
   height: 100%;
   width: 100%;
   background-color: rgb(28, 28, 118);
+}
 
-
-
- }
-
- .App-footer p{
+.App-footer p {
   color: white;
- }
+}
 
+.title {
+  color: white;
+}
 
-
-
- .title{
-  color: white
-
-
- }
-
-
- .controls-row{
+.controls-row {
   display: flex;
-  justify-content:space-between;
- }
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
+@media (max-width: 768px) {
+  .controls-row {
+    flex-direction: column;
+    align-items: center;
+  }
 
- .search-section{
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .load-more button {
+    width: auto;
+    min-width: 120px;
+  }
+}
+
+.search-section {
   margin-right: 80px;
- }
+}
 
-
- .load-more button{
+.load-more button {
   width: 15%;
   height: 7vh;
   border-radius: 10px;
   background-color: green;
   margin-top: 30px;
- }
+}
 
- .page-number{
-  color: white
- }
- .load-more{
-
+.page-number {
+  color: white;
+}
+.load-more {
   /* background: linear-gradient(to right, blue, black); */
-
- }
+  margin-bottom: 20px;
+}
